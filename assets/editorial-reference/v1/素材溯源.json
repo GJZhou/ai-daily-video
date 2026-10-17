@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Gemini_排名.png",
+    "source_url": "https://www.vals.ai/benchmarks/vals_index",
+    "capture_time_utc": "2026-10-15T03:19:28.821986+00:00",
+    "original_sha256": "f243f267c904512cbf21cdbf7eadddbeb631b1f8c64df0e2b9e297b1f53d45c2",
+    "main_point": "Vals综合评测排名第1，以第二、第三名为参照，分数作辅助证据；不外推所有能力。",
+    "sha256": "fb940b25181ec1d937933640957a1be14207be0c5982e1a383191ffb7da6e227"
+  },
+  {
+    "file": "Grok_版本对比.png",
+    "source_url": "https://artificialanalysis.ai/speech-to-speech",
+    "capture_time_utc": "2026-10-15T03:20:07.045067+00:00",
+    "original_sha256": "4a1e42d9b9a5cb14ed224a50be4953bbf60e9bc79647a9a98834c204527c4f1f",
+    "main_point": "同一τ-Voice模拟客服指标，Grok Voice 2.0为56.5%，3.0为71.6%；引导线不交叉。",
+    "sha256": "72866bc2234d33a1174889dc5223c4257193823d3f5dd99b61ef5eea868f0add"
+  },
+  {
+    "file": "Grok_价格.png",
+    "source_url": "https://docs.x.ai/developers/pricing",
+    "capture_time_utc": "2026-10-15T03:20:23.641587+00:00",
+    "original_sha256": "6d828130ec9a393238cf6c020f421d78d340a821436b681495bd10eac959edc9",
+    "main_point": "语音分钟单价与两代对照；保留文字输入另计条件，不将分钟单价表述为全部费用。",
+    "sha256": "b53aa7a2dbe52d4815e80895282300486d8e8f35762fad829df84eb80e882c54"
+  }
+]

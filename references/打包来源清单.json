@@ -1,0 +1,129 @@
+{
+  "package": "ai-daily-video",
+  "packaged_date": "2026-10-17",
+  "timezone": "Asia/Shanghai",
+  "policy": "Explicit allowlist of current prompt and fixed reusable references; no previous test episodes or outputs.",
+  "excluded": [
+    "episodes/",
+    "research/",
+    "work/qwen_env/",
+    "work/models/",
+    "work/tools/",
+    "test renders, preview servers, caches and unrelated project files"
+  ],
+  "external_runtime": "Existing local Python environment and Base model are bound in the voice configuration, retained in place and not copied.",
+  "imported_files": [
+    {
+      "source": "assets/audio-reference/reference-driven-v1/参考音频.wav",
+      "file": "assets/audio-reference/reference-driven-v1/参考音频.wav",
+      "source_sha256": "e0c2f85541b8df72f063da2fda8139ddbfcc2d3b688f9c5216500eadc498b347",
+      "change": "none",
+      "packaged_sha256": "e0c2f85541b8df72f063da2fda8139ddbfcc2d3b688f9c5216500eadc498b347"
+    },
+    {
+      "source": "assets/audio-reference/reference-driven-v1/参考原文.txt",
+      "file": "assets/audio-reference/reference-driven-v1/参考原文.txt",
+      "source_sha256": "8f74969cb1d201982d01f0ddbb21810e2d01a89cf7c0bd46fcef6f073e6adbef",
+      "change": "none",
+      "packaged_sha256": "8f74969cb1d201982d01f0ddbb21810e2d01a89cf7c0bd46fcef6f073e6adbef"
+    },
+    {
+      "source": "assets/audio-reference/reference-driven-v1/固定开场白.wav",
+      "file": "assets/audio-reference/reference-driven-v1/固定开场白.wav",
+      "source_sha256": "e7a6186e387721aecb00e7ae43d740087575f172022d9f28e01a888d82bfe1e3",
+      "change": "none",
+      "packaged_sha256": "e7a6186e387721aecb00e7ae43d740087575f172022d9f28e01a888d82bfe1e3"
+    },
+    {
+      "source": "assets/audio-reference/reference-driven-v1/分隔音.wav",
+      "file": "assets/audio-reference/reference-driven-v1/分隔音.wav",
+      "source_sha256": "3be624ee5515f86451e851a1de13e844d6772f012dabdd0cf37914dd08a7ef06",
+      "change": "none",
+      "packaged_sha256": "3be624ee5515f86451e851a1de13e844d6772f012dabdd0cf37914dd08a7ef06"
+    },
+    {
+      "source": "assets/audio-reference/reference-driven-v1/口播声音实例.mp3",
+      "file": "assets/audio-reference/reference-driven-v1/口播声音实例.mp3",
+      "source_sha256": "07c19c0ae178886f74a2b10345f6fa71478d7369191cc0137f01d1b61f97113c",
+      "change": "none",
+      "packaged_sha256": "07c19c0ae178886f74a2b10345f6fa71478d7369191cc0137f01d1b61f97113c"
+    },
+    {
+      "source": "assets/audio-reference/reference-driven-v1/声音参考配置.json",
+      "file": "assets/audio-reference/reference-driven-v1/声音参考配置.json",
+      "source_sha256": "636ba60e2760771b2f90484b88533daeadf02f97db0990787f68be10f170ae5a",
+      "change": "runtime bindings only; approved voice parameters unchanged",
+      "packaged_sha256": "52a4c3fe2e623aa1afd6fc4f38abd888f5eeef80027cf69ad61d460843f9b842"
+    },
+    {
+      "source": "assets/audio-reference/reference-driven-v1/说明.md",
+      "file": "assets/audio-reference/reference-driven-v1/说明.md",
+      "source_sha256": "f15a3036cac497f65813983c65d6cdb806d84a4d9c8771bcbc16b5303bae68b2",
+      "change": "none",
+      "packaged_sha256": "f15a3036cac497f65813983c65d6cdb806d84a4d9c8771bcbc16b5303bae68b2"
+    },
+    {
+      "source": "assets/editorial-reference/v1/三条资讯口播与素材示例.md",
+      "file": "assets/editorial-reference/v1/三条资讯口播与素材示例.md",
+      "source_sha256": "973182f9795a06bbd134d6d01039093f36133cd44ad2c3fbdd2483a4056423ab",
+      "change": "image markdown links made relative",
+      "packaged_sha256": "0df635e93fc31870856f81f6138f723188412659ff926349d9e265deb76e9fae"
+    },
+    {
+      "source": "assets/editorial-reference/v1/素材溯源.json",
+      "file": "assets/editorial-reference/v1/素材溯源.json",
+      "source_sha256": "9447f9c540e6c7b3669427c9cf37a49775fc337f38dfc1bcbe266ce9f3b6d032",
+      "change": "none",
+      "packaged_sha256": "9447f9c540e6c7b3669427c9cf37a49775fc337f38dfc1bcbe266ce9f3b6d032"
+    },
+    {
+      "source": "assets/editorial-reference/v1/Gemini_排名.png",
+      "file": "assets/editorial-reference/v1/Gemini_排名.png",
+      "source_sha256": "fb940b25181ec1d937933640957a1be14207be0c5982e1a383191ffb7da6e227",
+      "change": "none",
+      "packaged_sha256": "fb940b25181ec1d937933640957a1be14207be0c5982e1a383191ffb7da6e227"
+    },
+    {
+      "source": "assets/editorial-reference/v1/Grok_版本对比.png",
+      "file": "assets/editorial-reference/v1/Grok_版本对比.png",
+      "source_sha256": "72866bc2234d33a1174889dc5223c4257193823d3f5dd99b61ef5eea868f0add",
+      "change": "none",
+      "packaged_sha256": "72866bc2234d33a1174889dc5223c4257193823d3f5dd99b61ef5eea868f0add"
+    },
+    {
+      "source": "assets/editorial-reference/v1/Grok_价格.png",
+      "file": "assets/editorial-reference/v1/Grok_价格.png",
+      "source_sha256": "b53aa7a2dbe52d4815e80895282300486d8e8f35762fad829df84eb80e882c54",
+      "change": "none",
+      "packaged_sha256": "b53aa7a2dbe52d4815e80895282300486d8e8f35762fad829df84eb80e882c54"
+    },
+    {
+      "source": "assets/licenses/Qwen3-TTS-APACHE2.txt",
+      "file": "assets/licenses/Qwen3-TTS-APACHE2.txt",
+      "source_sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655",
+      "change": "none",
+      "packaged_sha256": "a44a6081c73ad75f0255bb2bb5cab74ef1829565a895a24e53a4f11290ab7655"
+    },
+    {
+      "source": "work/qwen-runtime-freeze.txt",
+      "file": "references/qwen-runtime-freeze.txt",
+      "source_sha256": "eedb5cc02157f33e1d4c1ebd4aae3445b71a1f8a01ba209dd172af2e8c9f2877",
+      "change": "none",
+      "packaged_sha256": "eedb5cc02157f33e1d4c1ebd4aae3445b71a1f8a01ba209dd172af2e8c9f2877"
+    },
+    {
+      "source": "assets/qwen-base-tts-manifest.json",
+      "file": "references/qwen-base-tts-manifest.json",
+      "source_sha256": "d31c60a6b45b2c2e57fa0a8326592b0da9c7c3cb90b51f6b99017fe489b4e131",
+      "change": "none",
+      "packaged_sha256": "d31c60a6b45b2c2e57fa0a8326592b0da9c7c3cb90b51f6b99017fe489b4e131"
+    },
+    {
+      "source": "AI日报视频提示词.md",
+      "file": "references/AI日报视频提示词.md",
+      "source_sha256": "92be1dad278d26a008fc808f442c3f5dbf099954fcd8f3626e689e268d7d4d86",
+      "change": "local markdown links only; production rules unchanged",
+      "packaged_sha256": "e7d5781315b83ba909f977b133c2e1409103ff318ac3412ab2d8d7fb6f3d22f0"
+    }
+  ]
+}

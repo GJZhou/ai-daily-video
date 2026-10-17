@@ -1,0 +1,57 @@
+{
+  "reference_id": "ai-daily-reference-driven-v1",
+  "approved": true,
+  "approval": {
+    "date": "2026-10-15",
+    "timezone": "Asia/Shanghai",
+    "quote": "可以的，之后配音就采用这个方案",
+    "scope": "User approved the reference-audio-driven speech scheme and this audition as the reusable voice reference; not approval of new narration text, animation or a full episode.",
+    "file_sha256": "07c19c0ae178886f74a2b10345f6fa71478d7369191cc0137f01d1b61f97113c"
+  },
+  "files": {
+    "参考音频.wav": {
+      "path": "assets/audio-reference/reference-driven-v1/参考音频.wav",
+      "sha256": "e0c2f85541b8df72f063da2fda8139ddbfcc2d3b688f9c5216500eadc498b347"
+    },
+    "参考原文.txt": {
+      "path": "assets/audio-reference/reference-driven-v1/参考原文.txt",
+      "sha256": "8f74969cb1d201982d01f0ddbb21810e2d01a89cf7c0bd46fcef6f073e6adbef"
+    },
+    "固定开场白.wav": {
+      "path": "assets/audio-reference/reference-driven-v1/固定开场白.wav",
+      "sha256": "e7a6186e387721aecb00e7ae43d740087575f172022d9f28e01a888d82bfe1e3"
+    },
+    "口播声音实例.mp3": {
+      "path": "assets/audio-reference/reference-driven-v1/口播声音实例.mp3",
+      "sha256": "07c19c0ae178886f74a2b10345f6fa71478d7369191cc0137f01d1b61f97113c"
+    },
+    "分隔音.wav": {
+      "path": "assets/audio-reference/reference-driven-v1/分隔音.wav",
+      "sha256": "3be624ee5515f86451e851a1de13e844d6772f012dabdd0cf37914dd08a7ef06"
+    }
+  },
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "model_revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+  "runtime": {
+    "python_executable": "D:/副业项目/视频生成测试-AI日报/work/qwen_env/Scripts/python.exe",
+    "model_directory": "D:/副业项目/视频生成测试-AI日报/work/models/Qwen3-TTS-12Hz-1.7B-Base",
+    "dependency_record": "references/qwen-runtime-freeze.txt",
+    "model_manifest": "references/qwen-base-tts-manifest.json",
+    "license_file": "assets/licenses/Qwen3-TTS-APACHE2.txt",
+    "offline": true
+  },
+  "icl_mode": true,
+  "x_vector_only_mode": false,
+  "seed": 20261015,
+  "temperature": 0.65,
+  "reference_source": "https://www.bilibili.com/video/BV12ERfB2EWV/",
+  "reference_range_seconds": [
+    0,
+    9.6
+  ],
+  "voice_seconds": 5.1040833333333335,
+  "total_seconds": 5.824083333333333,
+  "postprocessing": "Boundary silence trimming and loudness only; no tempo stretch, pitch shift or EQ",
+  "reuse": "Supply actual reference WAV, exact transcript, and new narration to the Base model. Keep native prosody; cache reference features when possible. Reuse the approved opening and separator.",
+  "paid_api_calls": 0
+}

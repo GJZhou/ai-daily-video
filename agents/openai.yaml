@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI日报视频"
+  short_description: "按选题、审核包、样片与整片确认流程制作中文AI日报资讯视频"
+  default_prompt: "使用 $ai-daily-video 制作今天的AI日报，先交付分类资讯主题列表，等我选择。"
