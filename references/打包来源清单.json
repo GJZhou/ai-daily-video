@@ -121,9 +121,9 @@
     {
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
-      "source_sha256": "49d0d9a33a499beb1bbb071878696748d58bd999f0c6d636e4e49e4cc081175b",
-      "change": "confirmed visual style consolidated; local links made relative",
-      "packaged_sha256": "3a8ecb10fe022d3a828d024e87ba57e46aa612c4099b423578164be5a1f5fc4e"
+      "source_sha256": "d85db38c528cf857e83dd1a44cad2aaf897bd06d5a549a32cb600ed52a0ac23b",
+      "change": "balanced grouping and intrinsic material proportions clarified; local links relative",
+      "packaged_sha256": "5759f40b137640e88b3222702c6c7c1f15809b515b049e8c878dbec44903fb28"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
@@ -142,9 +142,9 @@
     {
       "source": "assets/visual-reference/v1/风格参考说明.json",
       "file": "assets/visual-reference/v1/风格参考说明.json",
-      "source_sha256": "da8e524218a4eebffd9511482cc49a882034848fca1f4ae2fb7cf77f78bab146",
-      "packaged_sha256": "da8e524218a4eebffd9511482cc49a882034848fca1f4ae2fb7cf77f78bab146",
-      "change": "none; explicitly approved reusable visual reference"
+      "source_sha256": "50b7578c8915487b871ba8d66d05444268308379752c4655d0cf703d96c5bb70",
+      "packaged_sha256": "50b7578c8915487b871ba8d66d05444268308379752c4655d0cf703d96c5bb70",
+      "change": "visual reference scope clarified after layout feedback; images unchanged"
     }
   ]
 }
