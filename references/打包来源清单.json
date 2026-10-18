@@ -1,8 +1,8 @@
 {
   "package": "ai-daily-video",
-  "packaged_date": "2026-10-17",
+  "packaged_date": "2026-10-18",
   "timezone": "Asia/Shanghai",
-  "policy": "Explicit allowlist of current prompt and fixed reusable references; no previous test episodes or outputs.",
+  "policy": "Explicit allowlist of current prompt and reusable references, including two user-approved visual style stills; no episode videos, renderers or test packages.",
   "excluded": [
     "episodes/",
     "research/",
@@ -121,9 +121,30 @@
     {
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
-      "source_sha256": "92be1dad278d26a008fc808f442c3f5dbf099954fcd8f3626e689e268d7d4d86",
-      "change": "local markdown links only; production rules unchanged",
-      "packaged_sha256": "e7d5781315b83ba909f977b133c2e1409103ff318ac3412ab2d8d7fb6f3d22f0"
+      "source_sha256": "49d0d9a33a499beb1bbb071878696748d58bd999f0c6d636e4e49e4cc081175b",
+      "change": "confirmed visual style consolidated; local links made relative",
+      "packaged_sha256": "3a8ecb10fe022d3a828d024e87ba57e46aa612c4099b423578164be5a1f5fc4e"
+    },
+    {
+      "source": "assets/visual-reference/v1/封面构图.png",
+      "file": "assets/visual-reference/v1/封面构图.png",
+      "source_sha256": "436337d6813d432bedb7bf849895c26a474b537169fca4dbb28d6ef9868faf10",
+      "packaged_sha256": "436337d6813d432bedb7bf849895c26a474b537169fca4dbb28d6ef9868faf10",
+      "change": "none; explicitly approved reusable visual reference"
+    },
+    {
+      "source": "assets/visual-reference/v1/正文风格.jpg",
+      "file": "assets/visual-reference/v1/正文风格.jpg",
+      "source_sha256": "bdb186a0bd3616b6e45f1d948df5749af623e8cb09caf9eb30dd9aee9fc0025d",
+      "packaged_sha256": "bdb186a0bd3616b6e45f1d948df5749af623e8cb09caf9eb30dd9aee9fc0025d",
+      "change": "none; explicitly approved reusable visual reference"
+    },
+    {
+      "source": "assets/visual-reference/v1/风格参考说明.json",
+      "file": "assets/visual-reference/v1/风格参考说明.json",
+      "source_sha256": "da8e524218a4eebffd9511482cc49a882034848fca1f4ae2fb7cf77f78bab146",
+      "packaged_sha256": "da8e524218a4eebffd9511482cc49a882034848fca1f4ae2fb7cf77f78bab146",
+      "change": "none; explicitly approved reusable visual reference"
     }
   ]
 }
