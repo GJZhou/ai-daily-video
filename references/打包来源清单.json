@@ -120,9 +120,9 @@
     {
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
-      "source_sha256": "65c7b926d298078a6b83feb79dcc44156af52fbdde473fb60471bac1713c68f4",
-      "change": "existing style preserved; portable voice entry added; local links relative",
-      "packaged_sha256": "9a1f991d64bd7ce53dada5c0d7a047d2576d5159791dc3602321c015f693358c"
+      "source_sha256": "c570d286eda9e421b2ba162ea13f2836c149ab466c3362582913e6aeb4fa0f69",
+      "change": "existing content/style retained; allow high-interest corroborated unofficial reports with explicit attribution and pending-official-confirmation disclosure; local links relative",
+      "packaged_sha256": "92f68f5f74d46a8422cb7b0059d68544af192d65e028b47fe0b442f4e22bd681"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
