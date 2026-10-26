@@ -2,6 +2,7 @@
 [CmdletBinding()]
 param(
     [string]$BundleDirectory,
+    [string]$ResumeStage,
     [switch]$CheckOnly,
     [switch]$DryRun
 )
@@ -65,22 +66,32 @@ if (Test-Path -LiteralPath $target) {
     exit 0
 }
 if ($CheckOnly) { throw 'Runtime is not installed. Run install-runtime.ps1 without -CheckOnly.' }
-$required = [double]$manifest.archive_bytes * 2 + [double]$manifest.unpacked_bytes + 1073741824
+$required = if ($ResumeStage) { 1073741824 } else { [double]$manifest.archive_bytes * 2 + [double]$manifest.unpacked_bytes + 1073741824 }
 $drive = [IO.DriveInfo]::new([IO.Path]::GetPathRoot($skillRoot))
 if ($drive.AvailableFreeSpace -lt $required) { throw ('Insufficient free space; need about {0:N1} GiB during installation.' -f ($required/1GB)) }
 Write-Output ("Install {0}; download {1:N2} GiB, unpack {2:N2} GiB; destination: {3}" -f $manifest.runtime_id, ($manifest.archive_bytes/1GB), ($manifest.unpacked_bytes/1GB), $target)
 if ($DryRun) { exit 0 }
 if ($BundleDirectory) { Assert-PlainPath $BundleDirectory }
 New-Item -ItemType Directory -Path $runtimeRoot -Force | Out-Null
-$stage = Join-Path $runtimeRoot ('.install-' + [Guid]::NewGuid().ToString('N'))
-New-Item -ItemType Directory -Path $stage | Out-Null
+if ($ResumeStage) {
+    $stage = [IO.Path]::GetFullPath($ResumeStage)
+    if ([IO.Path]::GetDirectoryName($stage) -ne [IO.Path]::GetFullPath($runtimeRoot) -or [IO.Path]::GetFileName($stage) -notmatch '^\.install-[a-f0-9]{32}$') { throw 'ResumeStage must be an installer-owned direct staging directory under this Skill .runtime.' }
+    Assert-PlainPath $stage
+    if (-not (Test-Path -LiteralPath (Join-Path $stage 'payload/runtime-files.json'))) { throw 'Only a fully extracted stage can be resumed; otherwise run a fresh install.' }
+} else {
+    $stage = Join-Path $runtimeRoot ('.install-' + [Guid]::NewGuid().ToString('N'))
+    New-Item -ItemType Directory -Path $stage | Out-Null
+}
 $cache = Join-Path $stage 'parts'
 $payload = Join-Path $stage 'payload'
-New-Item -ItemType Directory -Path $cache, $payload | Out-Null
+if (-not $ResumeStage) { New-Item -ItemType Directory -Path $cache, $payload | Out-Null }
 $archive = Join-Path $stage 'runtime.zip'
 try {
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Add-Type -AssemblyName System.Net.Http
+    Add-Type -AssemblyName System.IO.Compression.FileSystem
+    $prefix = [IO.Path]::GetFullPath($payload) + [IO.Path]::DirectorySeparatorChar
+    if (-not $ResumeStage) {
     foreach ($part in $manifest.parts) {
         if ($part.name -notmatch '^voice-runtime\.zip\.part[0-9]{3}$') { throw 'Unsafe part filename.' }
         $path = Join-Path $cache $part.name
@@ -109,6 +120,12 @@ try {
             [IO.Compression.ZipFileExtensions]::ExtractToFile($entry, $destination, $false)
         }
     } finally { $zip.Dispose() }
+    } else {
+        Write-Output 'Revalidating the complete archive and extracted stage; no repeated download or decompression.'
+        Assert-Hash $archive $manifest.archive_sha256
+        # Refuse linked descendants before any inventory reads or overwrites.
+        Get-ChildItem -LiteralPath $payload -Recurse -Force | ForEach-Object { if ($_.Attributes -band [IO.FileAttributes]::ReparsePoint) { throw 'Linked staging content is not allowed.' } }
+    }
     Assert-Hash (Join-Path $payload 'runtime-files.json') $manifest.runtime_files_sha256
     $files = Get-Content -LiteralPath (Join-Path $payload 'runtime-files.json') -Raw -Encoding UTF8 | ConvertFrom-Json
     if ($files.runtime_id -ne $manifest.runtime_id) { throw 'Unexpected runtime file inventory.' }
@@ -116,12 +133,14 @@ try {
     foreach ($item in $files.files) {
         $destination = [IO.Path]::GetFullPath((Join-Path $payload $item.path))
         if (-not $destination.StartsWith($prefix, [StringComparison]::OrdinalIgnoreCase)) { throw 'Unsafe inventory path.' }
+        if ($ResumeStage -and $item.path -in @('python/vcruntime140.dll', 'python/vcruntime140_1.dll')) { continue }
         if ((Get-Item -LiteralPath $destination).Length -ne $item.bytes) { throw "Extracted file size mismatch: $($item.path)" }
+        if ($ResumeStage) { Assert-Hash $destination $item.sha256 }
     }
     $sidecar = $manifest.msvc_sidecar
     if ($sidecar.name -ne 'msvc-applocal.zip') { throw 'Unexpected CRT sidecar name.' }
     $sidecarPath = Join-Path $stage $sidecar.name
-    Receive-ReleaseFile $sidecar.name $sidecarPath
+    if (-not (Test-Path -LiteralPath $sidecarPath)) { Receive-ReleaseFile $sidecar.name $sidecarPath }
     if ((Get-Item -LiteralPath $sidecarPath).Length -ne $sidecar.bytes) { throw 'Incomplete CRT sidecar.' }
     Assert-Hash $sidecarPath $sidecar.sha256
     $crtZip = [IO.Compression.ZipFile]::OpenRead($sidecarPath)
@@ -132,7 +151,7 @@ try {
         }
     } finally { $crtZip.Dispose() }
     # Verify that dependencies resolve against the application-local CRT, not the source PC's DLLs.
-    & (Join-Path $payload 'python/python.exe') -X utf8 -I -B -c 'import sys,torch,qwen_tts,numpy,soundfile,onnxruntime; assert sys.version_info[:2] == (3,12); print("Portable imports ready; CPU torch",torch.__version__)'
+    & (Join-Path $payload 'python/python.exe') -X utf8 -I -B (Join-Path $PSScriptRoot 'check_runtime.py')
     if ($LASTEXITCODE -ne 0) { throw 'Portable Python import check failed; original environments were not modified.' }
     @{ runtime_id=$manifest.runtime_id; archive_sha256=$manifest.archive_sha256; msvc_sha256=$sidecar.sha256; installed_utc=[DateTime]::UtcNow.ToString('o'); owner='ai-daily-video/install-runtime.ps1' } | ConvertTo-Json | Set-Content -LiteralPath (Join-Path $payload 'install-receipt.json') -Encoding UTF8
     # Commit only a new versioned directory; an existing runtime is never overwritten.

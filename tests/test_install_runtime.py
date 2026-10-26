@@ -68,6 +68,30 @@ class InstallerBoundaries(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertFalse((self.root/'.runtime').exists())
 
+    def test_resume_rejects_foreign_directory(self):
+        outside = self.root/'not-a-stage'
+        outside.mkdir()
+        result = self.run_script('install-runtime.ps1', '-ResumeStage', str(outside))
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn(b'ResumeStage must be an installer-owned', result.stderr)
+        self.assertTrue(outside.exists())
+
+    def test_rollback_removes_only_owned_version(self):
+        target = self.root/'.runtime/win-x64-test'
+        target.mkdir(parents=True)
+        (target/'install-receipt.json').write_text(json.dumps({
+            'owner': 'ai-daily-video/install-runtime.ps1', 'runtime_id': 'win-x64-test'}), encoding='utf-8')
+        keep = self.root/'.runtime/win-x64-keep'
+        keep.mkdir()
+        (keep/'keep.txt').write_text('keep', encoding='ascii')
+        preview = self.run_script('remove-runtime.ps1', '-DryRun')
+        self.assertEqual(preview.returncode, 0, preview.stderr)
+        self.assertTrue(target.exists())
+        result = self.run_script('remove-runtime.ps1')
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertFalse(target.exists())
+        self.assertEqual((keep/'keep.txt').read_text(), 'keep')
+
 
 if __name__ == '__main__':
     unittest.main()
