@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "runtime_id": "win-x64-20261026-v1",
+  "platform": "windows-x86_64",
+  "python": "3.12.14",
+  "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
+  "model_revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
+  "release_tag": "runtime-win-x64-20261026-v1",
+  "repository": "GJZhou/ai-daily-video",
+  "download_base": "https://github.com/GJZhou/ai-daily-video/releases/download/runtime-win-x64-20261026-v1/",
+  "archive_sha256": "0e95fa7752817fc7f03787b195518724450bd188b89ef9a0c4eea50c9d592195",
+  "archive_bytes": 4084086187,
+  "unpacked_bytes": 5637386204,
+  "runtime_files_sha256": "2c39ebea598af211e8f33dbca1e605899a103171936812d446f555dea7f692c0",
+  "parts": [
+    {
+      "name": "voice-runtime.zip.part001",
+      "bytes": 1577058304,
+      "sha256": "abec77e94de0ec7b8119b2d8015fc6f188121aee78c3e062684edc4cc90bc1ab"
+    },
+    {
+      "name": "voice-runtime.zip.part002",
+      "bytes": 1577058304,
+      "sha256": "847ebdca080ee79bd29544854321564372b7db45b3ab721290b0566f68507457"
+    },
+    {
+      "name": "voice-runtime.zip.part003",
+      "bytes": 929969579,
+      "sha256": "6a21d80c13c69d7af7ea886e7e9085ea91c66a15a6d1620bafcd7de7dc3ec55a"
+    }
+  ],
+  "msvc_sidecar": {
+    "name": "msvc-applocal.zip",
+    "bytes": 713531,
+    "sha256": "211833dc4efd1470dc156d1cf875daf49f1444ea94f4dacff8bcc92d96058bdd",
+    "version": "14.40.33810.0",
+    "files": [
+      "concrt140.dll",
+      "msvcp140.dll",
+      "msvcp140_1.dll",
+      "msvcp140_2.dll",
+      "msvcp140_atomic_wait.dll",
+      "msvcp140_codecvt_ids.dll",
+      "vccorlib140.dll",
+      "vcruntime140.dll",
+      "vcruntime140_1.dll",
+      "vcruntime140_threads.dll"
+    ]
+  }
+}

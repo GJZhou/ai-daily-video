@@ -84,6 +84,7 @@ def main():
     import torch
     from qwen_tts import Qwen3TTSModel
     from transformers import set_seed
+    torch.set_num_threads(int(cfg['runtime'].get('cpu_threads', 6)))
     set_seed(int(cfg['seed']))
     model=Qwen3TTSModel.from_pretrained(str(model_dir),device_map='cpu',
         dtype=torch.float32,attn_implementation='eager',local_files_only=True)

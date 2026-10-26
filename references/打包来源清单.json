@@ -1,17 +1,16 @@
 {
   "package": "ai-daily-video",
-  "packaged_date": "2026-10-18",
+  "packaged_date": "2026-10-26",
   "timezone": "Asia/Shanghai",
-  "policy": "Explicit allowlist of current prompt and reusable references, including two user-approved visual style stills; no episode videos, renderers or test packages.",
+  "policy": "Reusable rules/references in Git plus a checksum-pinned Windows x64 voice runtime release; no episode content or old renderers.",
   "excluded": [
     "episodes/",
     "research/",
-    "work/qwen_env/",
-    "work/models/",
-    "work/tools/",
-    "test renders, preview servers, caches and unrelated project files"
+    "test renders and review packages",
+    "old render scripts and preview servers",
+    "private caches, environment files and credentials",
+    "unrelated models and original base Python third-party packages"
   ],
-  "external_runtime": "Existing local Python environment and Base model are bound in the voice configuration, retained in place and not copied.",
   "imported_files": [
     {
       "source": "assets/audio-reference/reference-driven-v1/参考音频.wav",
@@ -52,8 +51,8 @@
       "source": "assets/audio-reference/reference-driven-v1/声音参考配置.json",
       "file": "assets/audio-reference/reference-driven-v1/声音参考配置.json",
       "source_sha256": "636ba60e2760771b2f90484b88533daeadf02f97db0990787f68be10f170ae5a",
-      "change": "runtime bindings only; approved voice parameters unchanged",
-      "packaged_sha256": "52a4c3fe2e623aa1afd6fc4f38abd888f5eeef80027cf69ad61d460843f9b842"
+      "change": "portable relative runtime paths and CPU thread setting only; approved voice inputs/parameters unchanged",
+      "packaged_sha256": "c0ce9e97e6e0ac3b4816decb7adcf61809153231eeb851403981559c81fb2df6"
     },
     {
       "source": "assets/audio-reference/reference-driven-v1/说明.md",
@@ -121,9 +120,9 @@
     {
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
-      "source_sha256": "d85db38c528cf857e83dd1a44cad2aaf897bd06d5a549a32cb600ed52a0ac23b",
-      "change": "balanced grouping and intrinsic material proportions clarified; local links relative",
-      "packaged_sha256": "5759f40b137640e88b3222702c6c7c1f15809b515b049e8c878dbec44903fb28"
+      "source_sha256": "55eb635a0fbf29112d93333867165640771f53851dbc1733ca119070e2850f29",
+      "change": "existing style preserved; portable voice entry added; local links relative",
+      "packaged_sha256": "6e11d17d828f43f5bda2c209546c51acd7dd00a3998e414112fd33cfd93193a6"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
@@ -146,5 +145,17 @@
       "packaged_sha256": "50b7578c8915487b871ba8d66d05444268308379752c4655d0cf703d96c5bb70",
       "change": "visual reference scope clarified after layout feedback; images unchanged"
     }
-  ]
+  ],
+  "portable_runtime": {
+    "manifest": "references/portable-runtime.json",
+    "install_directory": ".runtime/win-x64-20261026-v1",
+    "distribution": "same-repository GitHub Release multipart assets",
+    "includes": [
+      "independent CPython 3.12 standard library/native runtime",
+      "validated CPU TTS site-packages and third-party licenses",
+      "approved full Base model and tokenizer weights",
+      "application-local licensed Visual Studio 2022 x64 redistributable CRT sidecar"
+    ],
+    "does_not_modify": "original project environment/model; approved voice input bytes and generation parameters"
+  }
 }

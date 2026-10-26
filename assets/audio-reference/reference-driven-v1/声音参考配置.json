@@ -33,12 +33,13 @@
   "model": "Qwen/Qwen3-TTS-12Hz-1.7B-Base",
   "model_revision": "fd4b254389122332181a7c3db7f27e918eec64e3",
   "runtime": {
-    "python_executable": "D:/副业项目/视频生成测试-AI日报/work/qwen_env/Scripts/python.exe",
-    "model_directory": "D:/副业项目/视频生成测试-AI日报/work/models/Qwen3-TTS-12Hz-1.7B-Base",
+    "python_executable": ".runtime/win-x64-20261026-v1/python/python.exe",
+    "model_directory": ".runtime/win-x64-20261026-v1/models/Qwen3-TTS-12Hz-1.7B-Base",
     "dependency_record": "references/qwen-runtime-freeze.txt",
     "model_manifest": "references/qwen-base-tts-manifest.json",
     "license_file": "assets/licenses/Qwen3-TTS-APACHE2.txt",
-    "offline": true
+    "offline": true,
+    "cpu_threads": 6
   },
   "icl_mode": true,
   "x_vector_only_mode": false,
