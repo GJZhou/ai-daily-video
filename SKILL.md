@@ -26,7 +26,7 @@ description: 制作面向中文AI工具用户的AI日报资讯视频，支持资
 
 - 编写审核包时，读取[三条资讯口播与素材示例](assets/editorial-reference/v1/三条资讯口播与素材示例.md)，查看其中三张图片及[素材溯源](assets/editorial-reference/v1/素材溯源.json)。案例用于学习表达和素材处理，不作为当期新闻依据或历史播出清单。
 - 配音或排查声音时，读取[配音运行说明](references/配音运行.md)、[已确认方案](assets/audio-reference/reference-driven-v1/说明.md)及[声音参考配置](assets/audio-reference/reference-driven-v1/声音参考配置.json)。向 Base 模型输入真实参考 WAV、准确原文和新台词；纯开场和分隔音可复用。
-- 制作样片、整片时，查看[封面构图](assets/visual-reference/v1/封面构图.png)、[正文风格](assets/visual-reference/v1/正文风格.jpg)及[参考说明](assets/visual-reference/v1/风格参考说明.json)；封面参考构图，正文参考色系、字体与素材辨识。按完整提示词重新组织当期画面，逐页审视空间关系与实际播放效果。
+- 制作样片、整片时，查看[封面构图](assets/visual-reference/v1/封面构图.png)、[正文风格](assets/visual-reference/v1/正文风格.jpg)及[参考说明](assets/visual-reference/v1/风格参考说明.json)；封面参考构图，正文参考色系与素材辨识；自制正文内容字号接近，重点按需加粗或变色，页标题与素材来源可分别放大、缩小。按完整提示词重新组织当期画面，逐页审视空间关系与实际播放效果。
 - 外部参考视频仅按需查看，地址见完整提示词；无需每期重下或转写。
 
 仅使用已有 GPT 能力及无新增费用的工具，不自动发布视频。配音附带 Windows 10/11 x64 的可迁移 Python、已验证依赖及完整 Base 模型，通过同仓库 GitHub Release 分卷分发，固定摘要见[运行包清单](references/portable-runtime.json)。首次配音按[配音运行说明](references/配音运行.md)使用 `scripts/narrate.ps1`：缺失时自动准备固定版本，后续离线复用，无需全局 Python、pip 安装或付费 API。用户已授权安装本 Skill 和配套配音环境，无需逐期重新征求下载安装确认；下载失败则报告，不改用付费服务。

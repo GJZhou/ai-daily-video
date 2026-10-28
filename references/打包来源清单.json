@@ -120,9 +120,9 @@
     {
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
-      "source_sha256": "c570d286eda9e421b2ba162ea13f2836c149ab466c3362582913e6aeb4fa0f69",
-      "change": "existing content/style retained; allow high-interest corroborated unofficial reports with explicit attribution and pending-official-confirmation disclosure; local links relative",
-      "packaged_sha256": "92f68f5f74d46a8422cb7b0059d68544af192d65e028b47fe0b442f4e22bd681"
+      "source_sha256": "bffafa65c6b49353732e1bc336bfff207f39b4c1694243b22389200510cf0d6f",
+      "change": "refine typography: close body text sizes, larger page titles and smaller source attribution; preserve original asset fonts and other content/style rules",
+      "packaged_sha256": "d9720d6fcea632602e037df3cc8139d9ddaa360f965c359346aa3bab662dd5f9"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
@@ -141,9 +141,9 @@
     {
       "source": "assets/visual-reference/v1/风格参考说明.json",
       "file": "assets/visual-reference/v1/风格参考说明.json",
-      "source_sha256": "50b7578c8915487b871ba8d66d05444268308379752c4655d0cf703d96c5bb70",
-      "packaged_sha256": "50b7578c8915487b871ba8d66d05444268308379752c4655d0cf703d96c5bb70",
-      "change": "visual reference scope clarified after layout feedback; images unchanged"
+      "source_sha256": "7e30009e799092308781cf2b170f281d96873b6cdcdad5c8852573a69ba5c5ac",
+      "packaged_sha256": "7e30009e799092308781cf2b170f281d96873b6cdcdad5c8852573a69ba5c5ac",
+      "change": "refine typography: close body text sizes, larger page titles and smaller source attribution; preserve original asset fonts and other content/style rules"
     }
   ],
   "portable_runtime": {
