@@ -120,9 +120,9 @@
     {
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
-      "source_sha256": "bffafa65c6b49353732e1bc336bfff207f39b4c1694243b22389200510cf0d6f",
-      "change": "refine typography: close body text sizes, larger page titles and smaller source attribution; preserve original asset fonts and other content/style rules",
-      "packaged_sha256": "d9720d6fcea632602e037df3cc8139d9ddaa360f965c359346aa3bab662dd5f9"
+      "source_sha256": "8e0429cebbc76d01791583addab87d357e2c9c066ece92622c60a4501a4655a7",
+      "change": "retain existing rules; chapter labels prioritize recognizable product/model/brand/company/institution names rather than generic fields; local links relative",
+      "packaged_sha256": "fe51d7fb1cb6add0b58a2251e484cca34c7800747eb759039ccaeaa317a1928e"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
