@@ -65,15 +65,15 @@
       "source": "assets/editorial-reference/v1/三条资讯口播与素材示例.md",
       "file": "assets/editorial-reference/v1/三条资讯口播与素材示例.md",
       "source_sha256": "973182f9795a06bbd134d6d01039093f36133cd44ad2c3fbdd2483a4056423ab",
-      "change": "image markdown links made relative",
-      "packaged_sha256": "0df635e93fc31870856f81f6138f723188412659ff926349d9e265deb76e9fae"
+      "change": "install three concise scripts confirmed 2026-11-01 and retain two annotation examples",
+      "packaged_sha256": "b30066dd18b6400f88916b5d4780eec5e16c4865a06f458e02cffb2ff5c0d0f7"
     },
     {
       "source": "assets/editorial-reference/v1/素材溯源.json",
       "file": "assets/editorial-reference/v1/素材溯源.json",
       "source_sha256": "9447f9c540e6c7b3669427c9cf37a49775fc337f38dfc1bcbe266ce9f3b6d032",
-      "change": "none",
-      "packaged_sha256": "9447f9c540e6c7b3669427c9cf37a49775fc337f38dfc1bcbe266ce9f3b6d032"
+      "change": "retain provenance for the two active annotation examples",
+      "packaged_sha256": "eccb1f87a663f867acdd9a91ce867092f68d286e8a20786ed7ad9b6344a0105f"
     },
     {
       "source": "assets/editorial-reference/v1/Gemini_排名.png",
@@ -88,13 +88,6 @@
       "source_sha256": "72866bc2234d33a1174889dc5223c4257193823d3f5dd99b61ef5eea868f0add",
       "change": "none",
       "packaged_sha256": "72866bc2234d33a1174889dc5223c4257193823d3f5dd99b61ef5eea868f0add"
-    },
-    {
-      "source": "assets/editorial-reference/v1/Grok_价格.png",
-      "file": "assets/editorial-reference/v1/Grok_价格.png",
-      "source_sha256": "b53aa7a2dbe52d4815e80895282300486d8e8f35762fad829df84eb80e882c54",
-      "change": "none",
-      "packaged_sha256": "b53aa7a2dbe52d4815e80895282300486d8e8f35762fad829df84eb80e882c54"
     },
     {
       "source": "assets/licenses/Qwen3-TTS-APACHE2.txt",
@@ -121,8 +114,8 @@
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
       "source_sha256": "8e0429cebbc76d01791583addab87d357e2c9c066ece92622c60a4501a4655a7",
-      "change": "retain existing rules; chapter labels prioritize recognizable product/model/brand/company/institution names rather than generic fields; local links relative",
-      "packaged_sha256": "fe51d7fb1cb6add0b58a2251e484cca34c7800747eb759039ccaeaa317a1928e"
+      "change": "consolidate style and error boundaries; preserve design freedom, content checks, stages and external-model workflow; clarify dates, translation and full-width navigation",
+      "packaged_sha256": "0797914841c0b4fe7a0eaf6d58a3c5736c63f12b5945fc28794031b9520441da"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
@@ -132,18 +125,18 @@
       "change": "none; explicitly approved reusable visual reference"
     },
     {
-      "source": "assets/visual-reference/v1/正文风格.jpg",
-      "file": "assets/visual-reference/v1/正文风格.jpg",
-      "source_sha256": "bdb186a0bd3616b6e45f1d948df5749af623e8cb09caf9eb30dd9aee9fc0025d",
-      "packaged_sha256": "bdb186a0bd3616b6e45f1d948df5749af623e8cb09caf9eb30dd9aee9fc0025d",
-      "change": "none; explicitly approved reusable visual reference"
+      "source": "user-approved Jules body reference, confirmed 2026-11-01",
+      "file": "assets/visual-reference/v1/正文风格.png",
+      "source_sha256": "6e42d81862559ed6403249dad5d8d5480510c9d755eee5a71b4a024381d108c2",
+      "packaged_sha256": "6e42d81862559ed6403249dad5d8d5480510c9d755eee5a71b4a024381d108c2",
+      "change": "approved candidate copied without pixel changes; replaces former body reference"
     },
     {
       "source": "assets/visual-reference/v1/风格参考说明.json",
       "file": "assets/visual-reference/v1/风格参考说明.json",
       "source_sha256": "7e30009e799092308781cf2b170f281d96873b6cdcdad5c8852573a69ba5c5ac",
-      "packaged_sha256": "7e30009e799092308781cf2b170f281d96873b6cdcdad5c8852573a69ba5c5ac",
-      "change": "refine typography: close body text sizes, larger page titles and smaller source attribution; preserve original asset fonts and other content/style rules"
+      "packaged_sha256": "70e291f0018702403842308fc225631de4196df14a9663754bb97159bdefa945",
+      "change": "record approved Jules reference and flexible style scope without fixed layouts"
     }
   ],
   "portable_runtime": {
@@ -157,5 +150,7 @@
       "application-local licensed Visual Studio 2022 x64 redistributable CRT sidecar"
     ],
     "does_not_modify": "original project environment/model; approved voice input bytes and generation parameters"
-  }
+  },
+  "updated_date": "2026-11-01",
+  "role": "Packaging provenance and integrity only; not an additional source of creative instructions or current news."
 }
