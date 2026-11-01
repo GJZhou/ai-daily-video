@@ -114,29 +114,71 @@
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
       "source_sha256": "8e0429cebbc76d01791583addab87d357e2c9c066ece92622c60a4501a4655a7",
-      "change": "consolidate style and error boundaries; preserve design freedom, content checks, stages and external-model workflow; clarify dates, translation and full-width navigation",
-      "packaged_sha256": "0797914841c0b4fe7a0eaf6d58a3c5736c63f12b5945fc28794031b9520441da"
+      "change": "retain stable rules; select only relevant visual examples by index, without layout quotas or inferring animation from a still",
+      "packaged_sha256": "a7caeca2571d9099b8561672344b37e7ef7b2ffe7c3bf81077e8ad00be1f1f00"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
       "file": "assets/visual-reference/v1/封面构图.png",
       "source_sha256": "436337d6813d432bedb7bf849895c26a474b537169fca4dbb28d6ef9868faf10",
-      "packaged_sha256": "436337d6813d432bedb7bf849895c26a474b537169fca4dbb28d6ef9868faf10",
-      "change": "none; explicitly approved reusable visual reference"
-    },
-    {
-      "source": "user-approved Jules body reference, confirmed 2026-11-01",
-      "file": "assets/visual-reference/v1/正文风格.png",
-      "source_sha256": "6e42d81862559ed6403249dad5d8d5480510c9d755eee5a71b4a024381d108c2",
-      "packaged_sha256": "6e42d81862559ed6403249dad5d8d5480510c9d755eee5a71b4a024381d108c2",
-      "change": "approved candidate copied without pixel changes; replaces former body reference"
+      "packaged_sha256": "7c0f5f95d990cc4cd6846ba9929e067be801921403c26bedcb140983e46e5733",
+      "change": "native source regeneration removes only the decorative title dot; all other pixels unchanged"
     },
     {
       "source": "assets/visual-reference/v1/风格参考说明.json",
       "file": "assets/visual-reference/v1/风格参考说明.json",
       "source_sha256": "7e30009e799092308781cf2b170f281d96873b6cdcdad5c8852573a69ba5c5ac",
-      "packaged_sha256": "70e291f0018702403842308fc225631de4196df14a9663754bb97159bdefa945",
-      "change": "record approved Jules reference and flexible style scope without fixed layouts"
+      "packaged_sha256": "69c847c626b4c6d4bca0eef18d4180d72c6ff4cf7a38b9bd2c413751867af6de",
+      "change": "route to a diverse curated reference set, with native cover edit and actual video/frame provenance"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文_上下布局.png",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "6e42d81862559ed6403249dad5d8d5480510c9d755eee5a71b4a024381d108c2",
+      "packaged_sha256": "6e42d81862559ed6403249dad5d8d5480510c9d755eee5a71b4a024381d108c2",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文_左右布局.png",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "d7d41a5cdfacf46b21d972ee6b7aa4b4b35101f40a0317679d3af1ae504bb1a9",
+      "packaged_sha256": "d7d41a5cdfacf46b21d972ee6b7aa4b4b35101f40a0317679d3af1ae504bb1a9",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文_单素材主画面.png",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "4a364e9a8f48538255ac245aa4672ac91c1ad36a8cb55a0a17532c5e2575e8be",
+      "packaged_sha256": "4a364e9a8f48538255ac245aa4672ac91c1ad36a8cb55a0a17532c5e2575e8be",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文_轻动画分镜.png",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "6de27a87a86f410eb70d2128760106ec57834f140efce445c20e7d366099f094",
+      "packaged_sha256": "6de27a87a86f410eb70d2128760106ec57834f140efce445c20e7d366099f094",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文_轻动画示例.mp4",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "42453c503e759b9520cbaf4b3e882da0cd3501f6139c61f2278a95b22d260365",
+      "packaged_sha256": "42453c503e759b9520cbaf4b3e882da0cd3501f6139c61f2278a95b22d260365",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文参考总览.png",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "d53c5aa21c74e6e18ab460d2785f9633e71f02825b753b31fde447386b084cd9",
+      "packaged_sha256": "d53c5aa21c74e6e18ab460d2785f9633e71f02825b753b31fde447386b084cd9",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "file": "assets/visual-reference/v1/正文参考索引.md",
+      "source": "curated visual reference requested 2026-11-01",
+      "source_sha256": "a627c0b14a45dc560409c63e6cf68698b505c453b70d48adb397214c7cc0e7eb",
+      "packaged_sha256": "a627c0b14a45dc560409c63e6cf68698b505c453b70d48adb397214c7cc0e7eb",
+      "change": "curated reference only; no renderer, episode project or original test outputs included"
     }
   ],
   "portable_runtime": {

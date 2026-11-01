@@ -18,7 +18,7 @@ description: 制作面向中文AI工具用户的AI日报资讯视频，支持资
 ## 按阶段读取参考
 
 - **编写审核包：**读取[三条精简口播与两张标注示例](assets/editorial-reference/v1/三条资讯口播与素材示例.md)及[素材溯源](assets/editorial-reference/v1/素材溯源.json)。学习信息取舍、比较关系与标注方法，不沿用旧型号、数据或结论。
-- **设计样片和整片：**查看[封面构图](assets/visual-reference/v1/封面构图.png)、[正文风格](assets/visual-reference/v1/正文风格.png)及[参考说明](assets/visual-reference/v1/风格参考说明.json)。学习暖色浅底、素材辨识、文字克制和均衡分组；参考图里的栏目数量、时间线和元素位置不是固定模板。
+- **设计样片和整片：**查看[封面构图](assets/visual-reference/v1/封面构图.png)和[正文参考索引](assets/visual-reference/v1/正文参考索引.md)，先看总览，再按需选择上下布局、左右布局、单素材或轻动画示例；来源见[参考说明](assets/visual-reference/v1/风格参考说明.json)。共用整体风格，案例是可组合的方向，不是固定模板或每期配额。
 - **配音或排查声音：**读取[配音运行说明](references/配音运行.md)、[已确认方案](assets/audio-reference/reference-driven-v1/说明.md)及[声音配置](assets/audio-reference/reference-driven-v1/声音参考配置.json)。真实原声与准确原文是模型输入，合成试听只用于效果对照；固定开场与分隔音可直接复用。
 - **需要进一步理解口播节奏时：**按完整提示词中的唯一整段视频链接参考，无需每期重新下载或转写。原声溯源链接不属于额外的创作案例。
 
