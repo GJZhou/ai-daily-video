@@ -114,8 +114,8 @@
       "source": "AI日报视频提示词.md",
       "file": "references/AI日报视频提示词.md",
       "source_sha256": "8e0429cebbc76d01791583addab87d357e2c9c066ece92622c60a4501a4655a7",
-      "change": "retain stable rules; select only relevant visual examples by index, without layout quotas or inferring animation from a still",
-      "packaged_sha256": "a7caeca2571d9099b8561672344b37e7ef7b2ffe7c3bf81077e8ad00be1f1f00"
+      "change": "retain stable rules; select only relevant visual examples by index, without layout quotas or inferring animation from a still; after final-video user approval, fill the local Bilibili submission template without platform actions",
+      "packaged_sha256": "f78f5498dac1e9eac2415498e75febe7b20d62b7a541accc8af96af48d7dcfa0"
     },
     {
       "source": "assets/visual-reference/v1/封面构图.png",
@@ -179,6 +179,13 @@
       "source_sha256": "a627c0b14a45dc560409c63e6cf68698b505c453b70d48adb397214c7cc0e7eb",
       "packaged_sha256": "a627c0b14a45dc560409c63e6cf68698b505c453b70d48adb397214c7cc0e7eb",
       "change": "curated reference only; no renderer, episode project or original test outputs included"
+    },
+    {
+      "source": "user-provided AI日报_B站投稿填写模板.md (B站运营)",
+      "file": "assets/publishing/AI日报_B站投稿填写模板.md",
+      "source_sha256": "219998e7c05956cfbdc4cd4edaaa28ed976b93462cfb621ae3017d6fe0b296d6",
+      "packaged_sha256": "8db78b1919b807d1e557a55ccca1c0668b807c8761c18dc22418d6dd27111b09",
+      "change": "preserve submission fields and user checklist; clarify local-document scope and unexecuted platform states; remove empty table rows"
     }
   ],
   "portable_runtime": {
@@ -193,6 +200,6 @@
     ],
     "does_not_modify": "original project environment/model; approved voice input bytes and generation parameters"
   },
-  "updated_date": "2026-11-01",
+  "updated_date": "2026-11-02",
   "role": "Packaging provenance and integrity only; not an additional source of creative instructions or current news."
 }
